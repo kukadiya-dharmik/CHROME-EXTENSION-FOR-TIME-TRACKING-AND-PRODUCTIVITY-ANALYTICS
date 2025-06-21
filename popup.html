@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductivityTracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="title">ProductivityTracker</h1>
+        <div class="date" id="currentDate"></div>
+      </div>
+      <button class="options-btn" id="optionsBtn" title="Settings">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 1v6m0 8v6m11-5h-6M8 12H2m19.07-7.07l-4.24 4.24M6.17 17.83l-4.24 4.24m16.9 0l-4.24-4.24M6.17 6.17L1.93 1.93"></path>
+        </svg>
+      </button>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="totalTime">0h 0m</div>
+        <div class="stat-label">Total Today</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="sitesVisited">0</div>
+        <div class="stat-label">Sites Visited</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="focusScore">0%</div>
+        <div class="stat-label">Focus Score</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Time Distribution</h2>
+      <div class="chart-container">
+        <canvas id="timeChart" width="300" height="200"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Top Sites Today</h2>
+      <div class="sites-list" id="topSites">
+        <div class="empty-state">
+          <p>Start browsing to see your activity</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Categories</h2>
+      <div class="categories-list" id="categoriesList">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
